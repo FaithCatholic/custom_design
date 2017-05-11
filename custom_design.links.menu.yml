@@ -1,0 +1,5 @@
+custom_design.settings:
+  title: 'Design settings'
+  description: 'Various design customizations that augment the installed theme.'
+  route_name: custom_design.settings
+  parent: 'system.themes_page'

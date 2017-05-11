@@ -1,0 +1,7 @@
+custom_design.settings:
+  path: '/admin/appearance/custom-design'
+  defaults:
+    _form: '\Drupal\custom_design\Form\SettingsForm'
+    _title: 'Design settings'
+  requirements:
+    _permission: 'administer site configuration'
