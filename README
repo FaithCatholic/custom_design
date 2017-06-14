@@ -1,0 +1,18 @@
+---SUMMARY---
+
+Module aims to let users define some design elements such as banner background
+images, etc.
+
+---INSTALLATION---
+
+Install as usual at /admin/extend. Grant the relevant permissions to the desired
+roles at /admin/user/permissions.
+
+---CUSTOM BACKGROUND IMAGES---
+
+1. Make sure the "access custom bg image form" has been added to the desired role(s).
+
+2. Upload a background image using the settings form at /admin/appearance/custom-design.
+
+3. Use the {{ custom_bg_image|raw }} variable in html.html.twig or page.html.twig to
+outpute an inline background style.
