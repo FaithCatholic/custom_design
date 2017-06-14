@@ -1,14 +1,9 @@
 {
-  "name": "drupal/custom_design",
+  "name": "faithcatholic/custom_design",
   "type": "drupal-module",
   "description": "Allows users to tweak custom design elements.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/custom_design",
   "minimum-stability": "dev",
-  "support": {
-    "issues": "https://www.drupal.org/project/issues/custom_design",
-    "source": "http://cgit.drupalcode.org/custom_design"
-  },
   "require": { }
 }
