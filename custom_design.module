@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\file\Entity\File;
+
 /**
  * @file
  * Contains custom_design.module.
@@ -15,7 +17,12 @@ function custom_design_preprocess_html(&$variables) {
 
 function _custom_design_preprocess_var(&$variables) {
   $config = \Drupal::service('config.factory')->getEditable('custom_design.settings');
-  if ($config->get('bg_image_url')) {
-    $variables['custom_bg_image'] = ' style="background: url(\''. $config->get('bg_image_url') .'\') top left no-repeat"';
+
+  if ($fid = $config->get('fid')) {
+    $file = File::load($fid);
+    $uri = $file->getFileUri();
+    $url = file_create_url($uri);
+    $variables['custom_bg_image'] = ' style="background: url(\''. $url .'\') top left no-repeat"';
   }
+
 }

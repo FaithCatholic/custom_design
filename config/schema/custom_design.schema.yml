@@ -2,6 +2,6 @@ custom_design.settings:
   type: config_object
   label: 'Custom design settings'
   mapping:
-    bg_image_url:
+    fid:
       type: string
-      label: 'Background image url'
+      label: 'Background image fid'
