@@ -5,9 +5,17 @@
  * Contains custom_design.module.
  */
 
+function custom_design_preprocess_page(&$variables) {
+  _custom_design_preprocess_var($variables);
+}
+
 function custom_design_preprocess_html(&$variables) {
+  _custom_design_preprocess_var($variables);
+}
+
+function _custom_design_preprocess_var(&$variables) {
   $config = \Drupal::service('config.factory')->getEditable('custom_design.settings');
   if ($config->get('bg_image_url')) {
-    $variables['custom_design_bg_image_inline_style'] = ' style="background: url(\''. $config->get('bg_image_url') .'\') top left no-repeat"';
+    $variables['custom_bg_image'] = ' style="background: url(\''. $config->get('bg_image_url') .'\') top left no-repeat"';
   }
 }
