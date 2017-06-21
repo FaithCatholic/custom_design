@@ -67,8 +67,11 @@ class SettingsForm extends ConfigFormBase {
     if ($values && array_key_exists('bg_image_file', $values)) {
       if (is_array($values['bg_image_file'])) {
         $fid = $values['bg_image_file'][0];
+
         $file = \Drupal\file\Entity\File::load($fid);
         $file->setPermanent();
+        $file->save();
+
         $file_usage = \Drupal::service('file.usage');
         $file_usage->add($file, 'custom_design', 'custom_design', \Drupal::currentUser()->id());
 
