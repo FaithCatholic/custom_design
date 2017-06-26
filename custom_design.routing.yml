@@ -4,4 +4,4 @@ custom_design.settings:
     _form: '\Drupal\custom_design\Form\SettingsForm'
     _title: 'Design settings'
   requirements:
-    _permission: 'administer site configuration'
+    _permission: 'edit custom banners'
