@@ -10,7 +10,7 @@ roles at /admin/user/permissions.
 
 ---CUSTOM BACKGROUND IMAGES---
 
-1. Make sure the "access custom bg image form" has been added to the desired role(s).
+1. Make sure the "edit custom banners" has been added to the desired role(s).
 
 2. Upload a background image using the settings form at /admin/appearance/custom-design.
 
