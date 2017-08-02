@@ -32,7 +32,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
-    $custom_design_config = $this->config('custom_design.settings');
+    // $custom_design_config = $this->config('custom_design.settings');
     $config = \Drupal::service('config.factory')->getEditable('custom_design.settings');
 
     $description = t('Upload an image file. Available extensions (.png .jpg .jpeg)');

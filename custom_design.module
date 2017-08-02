@@ -22,7 +22,7 @@ function _custom_design_preprocess_var(&$variables) {
     $file = File::load($fid);
     $uri = $file->getFileUri();
     $url = file_create_url($uri);
-    $variables['custom_bg_image'] = ' style="background: url(\''. $url .'\') top left no-repeat"';
+    $variables['custom_bg_image'] = ' style="background: url(\''. $url .'\') center no-repeat"';
   }
 
 }
