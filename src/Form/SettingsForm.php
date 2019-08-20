@@ -31,7 +31,7 @@ class SettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     // $custom_design_config = $this->config('custom_design.settings');
     $config = \Drupal::service('config.factory')->getEditable('custom_design.settings');
 
