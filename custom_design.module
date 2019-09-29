@@ -18,11 +18,15 @@ function custom_design_preprocess_html(&$variables) {
 function _custom_design_preprocess_var(&$variables) {
   $config = \Drupal::service('config.factory')->getEditable('custom_design.settings');
 
-  if ($fid = $config->get('fid')) {
+  $type = $config->get('type');
+  $fid = $config->get('fid');
+
+  if ($type && $fid) {
     $file = File::load($fid);
     $uri = $file->getFileUri();
     $url = file_create_url($uri);
-    $variables['custom_bg_image'] = ' style="background: url(\''. $url .'\') center no-repeat"';
-  }
 
+    $variables['custom_bg_type'] = $type;
+    $variables['custom_bg_url'] = $url;
+  }
 }

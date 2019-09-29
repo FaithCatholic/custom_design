@@ -2,6 +2,12 @@ custom_design.settings:
   type: config_object
   label: 'Custom design settings'
   mapping:
+    type:
+      type: string
+      label: 'Background type'
+    mid:
+      type: string
+      label: 'Media id'
     fid:
       type: string
-      label: 'Background image fid'
+      label: 'File id'

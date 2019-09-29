@@ -1,7 +1,7 @@
 ---SUMMARY---
 
 Module aims to let users define some design elements such as banner background
-images, etc.
+images, videos, etc.
 
 ---INSTALLATION---
 
@@ -12,7 +12,13 @@ roles at /admin/user/permissions.
 
 1. Make sure the "edit custom banners" has been added to the desired role(s).
 
-2. Upload a background image using the settings form at /admin/appearance/custom-design.
+2. Upload a background image or video using the settings form at /admin/appearance/custom-design.
 
-3. Use the {{ custom_bg_image|raw }} variable in html.html.twig or page.html.twig to
-outpute an inline background style.
+3. Use the {{ custom_bg_url }} variable in html.html.twig or page.html.twig to
+outpute an image or video url.
+
+4. Wrap the url in an HTML element or inline style to display the output. A {{ custom_bg_type }}
+variable is included for any necessary if-then-else conditionals, etc. (For example, a video
+background can be included by including a <video> tag.)
+
+5. Futher formatting—background videos, for example—can be provided using additional css.
