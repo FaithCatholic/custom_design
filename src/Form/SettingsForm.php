@@ -92,11 +92,15 @@ class SettingsForm extends ConfigFormBase {
       $entity = Media::load($mid);
     }
 
+    $options = ['absolute' => TRUE, 'query' => ['destination' => 'admin/appearance/custom-design']];
+    $url = \Drupal\Core\Url::fromRoute('entity.media.add_form', ['media_type' => 'remote_video'], $options);
+    $url = $url->toString();
+
     $form['video']['bg_video_file'] = [
       '#type' => 'entity_autocomplete',
       '#target_type' => 'media',
       '#title' => $this->t('Video'),
-      '#description' => $this->t('Select a video.'),
+      '#description' => ($this->t('Type a video title to make a selection.'). ' <a href="'. $url .'">You can also upload a new video.</a>'),
       '#tags' => TRUE,
       '#selection_settings' => array(
         'target_bundles' => array('video'),
@@ -142,7 +146,7 @@ class SettingsForm extends ConfigFormBase {
       $entity = Media::load($media_id);
       $fid = $entity->field_media_video_file->target_id;
 
-      $this->config('custom_design.settings')->set('mid', $media_id)->save();\
+      $this->config('custom_design.settings')->set('mid', $media_id)->save();
       $this->config('custom_design.settings')->set('fid', $fid)->save();
     }
 
